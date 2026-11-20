@@ -1,0 +1,5 @@
+# Review all author PRs. Evaluator changes and best-reference changes are separate PRs.
+* @kenqia
+/gate/ @kenqia
+/.github/ @kenqia
+/best/ @kenqia

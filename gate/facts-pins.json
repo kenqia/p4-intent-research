@@ -1,0 +1,7 @@
+{
+  "data/samples/nbs_nev_production_2026Q3.csv": "ecddb856b56b528909d592a1c324539e2eb1a4ae0e9bcfe8d238cd9b8de87b95",
+  "tests/p4_content_benchmark/author/market-full-only.csv": "6f9bd33533345a649f58239dc6d929cf194017a4ed407569a28eff6f1d3bff17",
+  "tests/p4_content_benchmark/author/market.csv": "c860fd11fd27fde73fc0f177b0f44d3583a330d189105aa74764dba77f31c11d",
+  "tests/p4_content_benchmark/review/claims.json": "4ad730d65b40d4c7b9b5710c8637d71a742f08b98d5977269c2db7b48d8b01ba",
+  "tests/p4_content_benchmark/test_content_benchmark.py": "5b566a588ea8298d4ad7fd212840f58e75b2980cf2303f7eb922e689ea062910"
+}

@@ -1,0 +1,1460 @@
+{
+  "cutoff": "2026-10-20",
+  "evidence": {
+    "cada:2026-08:stock_definition": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cada:2026-08:stock_definition",
+      "kind": "methodology",
+      "locator": "附：汽车经销商库存调查说明",
+      "metric": "stock_definition",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "source_id": "cada:2026-08",
+      "value": "库存系数=期末库存量/当期销售量"
+    },
+    "cada:2026-08:stock_ratio": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cada:2026-08:stock_ratio",
+      "kind": "observation",
+      "locator": "调查结果首段 → 综合库存系数",
+      "metric": "stock_ratio",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "dealer",
+      "source_id": "cada:2026-08",
+      "unit": "倍",
+      "value": "1.58"
+    },
+    "cada:2026-08:stock_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cada:2026-08:stock_yoy",
+      "kind": "observation",
+      "locator": "调查结果首段 → 同比",
+      "metric": "stock_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "dealer",
+      "source_id": "cada:2026-08",
+      "unit": "%",
+      "value": "20.6"
+    },
+    "cada:2026-09:stock_definition": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cada:2026-09:stock_definition",
+      "kind": "methodology",
+      "locator": "附：汽车经销商库存调查说明",
+      "metric": "stock_definition",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "source_id": "cada:2026-09",
+      "value": "库存系数=期末库存量/当期销售量"
+    },
+    "cada:2026-09:stock_ratio": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cada:2026-09:stock_ratio",
+      "kind": "observation",
+      "locator": "调查结果首段 → 综合库存系数",
+      "metric": "stock_ratio",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "dealer",
+      "source_id": "cada:2026-09",
+      "unit": "倍",
+      "value": "1.68"
+    },
+    "cada:2026-09:stock_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cada:2026-09:stock_yoy",
+      "kind": "observation",
+      "locator": "调查结果首段 → 同比",
+      "metric": "stock_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "dealer",
+      "source_id": "cada:2026-09",
+      "unit": "%",
+      "value": "24.4"
+    },
+    "cpca:2025-09:a00": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:a00",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 纯电动车级别 → A00 → 销量",
+      "metric": "a00",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "万辆",
+      "value": "15.7"
+    },
+    "cpca:2025-09:a00_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:a00_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 纯电动车级别 → A00 → 报告同比",
+      "metric": "a00_yoy",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "16"
+    },
+    "cpca:2025-09:all_retail": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:all_retail",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 零售首段 → 销量",
+      "metric": "all_retail",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2025-09",
+      "unit": "万辆",
+      "value": "224.1"
+    },
+    "cpca:2025-09:all_retail_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:all_retail_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 零售首段 → 报告同比",
+      "metric": "all_retail_yoy",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "6.3"
+    },
+    "cpca:2025-09:bev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:bev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 纯电动批发销量 → 销量",
+      "metric": "bev",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "万辆",
+      "value": "94.7"
+    },
+    "cpca:2025-09:bev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:bev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 纯电动批发销量 → 报告同比",
+      "metric": "bev_yoy",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "32.4"
+    },
+    "cpca:2025-09:erev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:erev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 增程式批发 → 销量",
+      "metric": "erev",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "万辆",
+      "value": "12.9"
+    },
+    "cpca:2025-09:erev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:erev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 增程式批发 → 报告同比",
+      "metric": "erev_yoy",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "8.7"
+    },
+    "cpca:2025-09:export": {
+      "evidence_id": "cpca:2025-09:export",
+      "period": "2025-09",
+      "series": "export",
+      "unit": "万辆",
+      "value": "21.1"
+    },
+    "cpca:2025-09:export:ytd": {
+      "evidence_id": "cpca:2025-09:export:ytd",
+      "period": "2025-01/09",
+      "series": "export",
+      "unit": "万辆",
+      "value": "162.7"
+    },
+    "cpca:2025-09:export_bev_share": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:export_bev_share",
+      "kind": "observation",
+      "locator": "新能源 → 3)出口 → 纯电动份额（当月）",
+      "metric": "export_bev_share",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "export",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "66"
+    },
+    "cpca:2025-09:export_yoy": {
+      "evidence_id": "cpca:2025-09:export_yoy",
+      "period": "2025-09",
+      "series": "export_yoy",
+      "unit": "%",
+      "value": "96.5"
+    },
+    "cpca:2025-09:export_yoy:ytd": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:export_yoy:ytd",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 厂商出口（1–9月累计） → 报告同比",
+      "metric": "export_yoy",
+      "period": [
+        "2025-01",
+        "2025-09"
+      ],
+      "scope": "export",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "67.5"
+    },
+    "cpca:2025-09:penetration": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:penetration",
+      "kind": "observation",
+      "locator": "新能源 → 2)零售 → 渗透率",
+      "metric": "penetration",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "57.8"
+    },
+    "cpca:2025-09:phev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:phev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 狭义插混销量 → 销量",
+      "metric": "phev",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "万辆",
+      "value": "42.4"
+    },
+    "cpca:2025-09:phev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:phev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 狭义插混销量 → 报告同比",
+      "metric": "phev_yoy",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "8.4"
+    },
+    "cpca:2025-09:retail": {
+      "evidence_id": "cpca:2025-09:retail",
+      "period": "2025-09",
+      "series": "retail",
+      "unit": "万辆",
+      "value": "129.6"
+    },
+    "cpca:2025-09:retail:ytd": {
+      "evidence_id": "cpca:2025-09:retail:ytd",
+      "period": "2025-01/09",
+      "series": "retail",
+      "unit": "万辆",
+      "value": "886.6"
+    },
+    "cpca:2025-09:retail_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:retail_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 市场零售 → 报告同比",
+      "metric": "retail_yoy",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "retail",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "15.5"
+    },
+    "cpca:2025-09:retail_yoy:ytd": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:retail_yoy:ytd",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 市场零售（1–9月累计） → 报告同比",
+      "metric": "retail_yoy",
+      "period": [
+        "2025-01",
+        "2025-09"
+      ],
+      "scope": "retail",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "24.4"
+    },
+    "cpca:2025-09:wholesale": {
+      "evidence_id": "cpca:2025-09:wholesale",
+      "period": "2025-09",
+      "series": "wholesale",
+      "unit": "万辆",
+      "value": "150.0"
+    },
+    "cpca:2025-09:wholesale:ytd": {
+      "evidence_id": "cpca:2025-09:wholesale:ytd",
+      "period": "2025-01/09",
+      "series": "wholesale",
+      "unit": "万辆",
+      "value": "1044.4"
+    },
+    "cpca:2025-09:wholesale_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:wholesale_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 批发销量达到 → 报告同比",
+      "metric": "wholesale_yoy",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "22.4"
+    },
+    "cpca:2025-09:wholesale_yoy:ytd": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2025-09:wholesale_yoy:ytd",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 批发销量达到（1–9月累计） → 报告同比",
+      "metric": "wholesale_yoy",
+      "period": [
+        "2025-01",
+        "2025-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2025-09",
+      "unit": "%",
+      "value": "31.9"
+    },
+    "cpca:2026-07:a00": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:a00",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 纯电动车级别 → A00 → 销量",
+      "metric": "a00",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "万辆",
+      "value": "6.5"
+    },
+    "cpca:2026-07:a00_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:a00_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 纯电动车级别 → A00 → 报告同比",
+      "metric": "a00_yoy",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "-50"
+    },
+    "cpca:2026-07:all_retail": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:all_retail",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 零售首段 → 销量",
+      "metric": "all_retail",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-07",
+      "unit": "万辆",
+      "value": "146.1"
+    },
+    "cpca:2026-07:all_retail_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:all_retail_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 零售首段 → 报告同比",
+      "metric": "all_retail_yoy",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "-20.9"
+    },
+    "cpca:2026-07:bev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:bev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 纯电动批发销量 → 销量",
+      "metric": "bev",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "万辆",
+      "value": "95.8"
+    },
+    "cpca:2026-07:bev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:bev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 纯电动批发销量 → 报告同比",
+      "metric": "bev_yoy",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "28.6"
+    },
+    "cpca:2026-07:erev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:erev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 增程式批发 → 销量",
+      "metric": "erev",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "万辆",
+      "value": "10.0"
+    },
+    "cpca:2026-07:erev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:erev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 增程式批发 → 报告同比",
+      "metric": "erev_yoy",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "-7.5"
+    },
+    "cpca:2026-07:export": {
+      "evidence_id": "cpca:2026-07:export",
+      "period": "2026-07",
+      "series": "export",
+      "unit": "万辆",
+      "value": "54.0"
+    },
+    "cpca:2026-07:export_bev_share": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:export_bev_share",
+      "kind": "observation",
+      "locator": "新能源 → 3)出口 → 纯电动份额（当月）",
+      "metric": "export_bev_share",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "export",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "59.5"
+    },
+    "cpca:2026-07:export_yoy": {
+      "evidence_id": "cpca:2026-07:export_yoy",
+      "period": "2026-07",
+      "series": "export_yoy",
+      "unit": "%",
+      "value": "147.8"
+    },
+    "cpca:2026-07:penetration": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:penetration",
+      "kind": "observation",
+      "locator": "新能源 → 2)零售 → 渗透率",
+      "metric": "penetration",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "65.1"
+    },
+    "cpca:2026-07:phev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:phev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 狭义插混销量 → 销量",
+      "metric": "phev",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "万辆",
+      "value": "38.7"
+    },
+    "cpca:2026-07:phev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:phev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 狭义插混销量 → 报告同比",
+      "metric": "phev_yoy",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "14.6"
+    },
+    "cpca:2026-07:retail": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:retail",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 市场零售 → 销量",
+      "metric": "retail",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "retail",
+      "source_id": "cpca:2026-07",
+      "unit": "万辆",
+      "value": "95.1"
+    },
+    "cpca:2026-07:retail_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:retail_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 市场零售 → 报告同比",
+      "metric": "retail_yoy",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "retail",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "-3.9"
+    },
+    "cpca:2026-07:wholesale": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:wholesale",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 批发销量达到 → 销量",
+      "metric": "wholesale",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "万辆",
+      "value": "144.6"
+    },
+    "cpca:2026-07:wholesale_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-07:wholesale_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 批发销量达到 → 报告同比",
+      "metric": "wholesale_yoy",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-07",
+      "unit": "%",
+      "value": "21.3"
+    },
+    "cpca:2026-08:a00": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:a00",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 纯电动车级别 → A00 → 销量",
+      "metric": "a00",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "万辆",
+      "value": "6.1"
+    },
+    "cpca:2026-08:a00_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:a00_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 纯电动车级别 → A00 → 报告同比",
+      "metric": "a00_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "-51"
+    },
+    "cpca:2026-08:all_retail": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:all_retail",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 零售首段 → 销量",
+      "metric": "all_retail",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-08",
+      "unit": "万辆",
+      "value": "154.1"
+    },
+    "cpca:2026-08:all_retail_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:all_retail_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 零售首段 → 报告同比",
+      "metric": "all_retail_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "-23.6"
+    },
+    "cpca:2026-08:bev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:bev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 纯电动批发销量 → 销量",
+      "metric": "bev",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "万辆",
+      "value": "103.2"
+    },
+    "cpca:2026-08:bev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:bev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 纯电动批发销量 → 报告同比",
+      "metric": "bev_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "25.9"
+    },
+    "cpca:2026-08:erev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:erev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 增程式批发 → 销量",
+      "metric": "erev",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "万辆",
+      "value": "9.3"
+    },
+    "cpca:2026-08:erev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:erev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 增程式批发 → 报告同比",
+      "metric": "erev_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "-10.9"
+    },
+    "cpca:2026-08:export": {
+      "evidence_id": "cpca:2026-08:export",
+      "period": "2026-08",
+      "series": "export",
+      "unit": "万辆",
+      "value": "51.8"
+    },
+    "cpca:2026-08:export_bev_share": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:export_bev_share",
+      "kind": "observation",
+      "locator": "新能源 → 3)出口 → 纯电动份额（当月）",
+      "metric": "export_bev_share",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "export",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "63.4"
+    },
+    "cpca:2026-08:export_yoy": {
+      "evidence_id": "cpca:2026-08:export_yoy",
+      "period": "2026-08",
+      "series": "export_yoy",
+      "unit": "%",
+      "value": "154.7"
+    },
+    "cpca:2026-08:penetration": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:penetration",
+      "kind": "observation",
+      "locator": "新能源 → 2)零售 → 渗透率",
+      "metric": "penetration",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "65.2"
+    },
+    "cpca:2026-08:phev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:phev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 狭义插混销量 → 销量",
+      "metric": "phev",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "万辆",
+      "value": "38.6"
+    },
+    "cpca:2026-08:phev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:phev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 狭义插混销量 → 报告同比",
+      "metric": "phev_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "3.1"
+    },
+    "cpca:2026-08:retail": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:retail",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 市场零售 → 销量",
+      "metric": "retail",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "retail",
+      "source_id": "cpca:2026-08",
+      "unit": "万辆",
+      "value": "100.5"
+    },
+    "cpca:2026-08:retail_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:retail_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 市场零售 → 报告同比",
+      "metric": "retail_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "retail",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "-10.1"
+    },
+    "cpca:2026-08:wholesale": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:wholesale",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 批发销量达到 → 销量",
+      "metric": "wholesale",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "万辆",
+      "value": "151.0"
+    },
+    "cpca:2026-08:wholesale_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-08:wholesale_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 批发销量达到 → 报告同比",
+      "metric": "wholesale_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-08",
+      "unit": "%",
+      "value": "16.4"
+    },
+    "cpca:2026-09:a00": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:a00",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 纯电动车级别 → A00 → 销量",
+      "metric": "a00",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "万辆",
+      "value": "7.8"
+    },
+    "cpca:2026-09:a00_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:a00_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 纯电动车级别 → A00 → 报告同比",
+      "metric": "a00_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "-51"
+    },
+    "cpca:2026-09:all_retail": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:all_retail",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 零售首段 → 销量",
+      "metric": "all_retail",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-09",
+      "unit": "万辆",
+      "value": "161.8"
+    },
+    "cpca:2026-09:all_retail_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:all_retail_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 零售首段 → 报告同比",
+      "metric": "all_retail_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "-28.0"
+    },
+    "cpca:2026-09:bev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:bev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 纯电动批发销量 → 销量",
+      "metric": "bev",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "万辆",
+      "value": "112.6"
+    },
+    "cpca:2026-09:bev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:bev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 纯电动批发销量 → 报告同比",
+      "metric": "bev_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "18.3"
+    },
+    "cpca:2026-09:erev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:erev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 增程式批发 → 销量",
+      "metric": "erev",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "万辆",
+      "value": "11.7"
+    },
+    "cpca:2026-09:erev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:erev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 增程式批发 → 报告同比",
+      "metric": "erev_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "-4.0"
+    },
+    "cpca:2026-09:export": {
+      "evidence_id": "cpca:2026-09:export",
+      "period": "2026-09",
+      "series": "export",
+      "unit": "万辆",
+      "value": "55.8"
+    },
+    "cpca:2026-09:export:ytd": {
+      "evidence_id": "cpca:2026-09:export:ytd",
+      "period": "2026-01/09",
+      "series": "export",
+      "unit": "万辆",
+      "value": "388.7"
+    },
+    "cpca:2026-09:export_bev_share": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:export_bev_share",
+      "kind": "observation",
+      "locator": "新能源 → 3)出口 → 纯电动份额（当月）",
+      "metric": "export_bev_share",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "export",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "60.5"
+    },
+    "cpca:2026-09:export_yoy": {
+      "evidence_id": "cpca:2026-09:export_yoy",
+      "period": "2026-09",
+      "series": "export_yoy",
+      "unit": "%",
+      "value": "163.5"
+    },
+    "cpca:2026-09:export_yoy:ytd": {
+      "evidence_id": "cpca:2026-09:export_yoy:ytd",
+      "period": "2026-01/09",
+      "series": "export_yoy",
+      "unit": "%",
+      "value": "138.8"
+    },
+    "cpca:2026-09:penetration": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:penetration",
+      "kind": "observation",
+      "locator": "新能源 → 2)零售 → 渗透率",
+      "metric": "penetration",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "all_retail",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "67.0"
+    },
+    "cpca:2026-09:phev": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:phev",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 狭义插混销量 → 销量",
+      "metric": "phev",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "万辆",
+      "value": "42.3"
+    },
+    "cpca:2026-09:phev_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:phev_yoy",
+      "kind": "observation",
+      "locator": "新能源 → 1)批发 → 动力类型 → 狭义插混销量 → 报告同比",
+      "metric": "phev_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "-0.1"
+    },
+    "cpca:2026-09:retail": {
+      "evidence_id": "cpca:2026-09:retail",
+      "period": "2026-09",
+      "series": "retail",
+      "unit": "万辆",
+      "value": "108.4"
+    },
+    "cpca:2026-09:retail:ytd": {
+      "evidence_id": "cpca:2026-09:retail:ytd",
+      "period": "2026-01/09",
+      "series": "retail",
+      "unit": "万辆",
+      "value": "775.8"
+    },
+    "cpca:2026-09:retail_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:retail_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 市场零售 → 报告同比",
+      "metric": "retail_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "retail",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "-16.7"
+    },
+    "cpca:2026-09:retail_yoy:ytd": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:retail_yoy:ytd",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 市场零售（1–9月累计） → 报告同比",
+      "metric": "retail_yoy",
+      "period": [
+        "2026-01",
+        "2026-09"
+      ],
+      "scope": "retail",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "-12.8"
+    },
+    "cpca:2026-09:wholesale": {
+      "evidence_id": "cpca:2026-09:wholesale",
+      "period": "2026-09",
+      "series": "wholesale",
+      "unit": "万辆",
+      "value": "166.6"
+    },
+    "cpca:2026-09:wholesale:ytd": {
+      "evidence_id": "cpca:2026-09:wholesale:ytd",
+      "period": "2026-01/09",
+      "series": "wholesale",
+      "unit": "万辆",
+      "value": "1144.8"
+    },
+    "cpca:2026-09:wholesale_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:wholesale_yoy",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 批发销量达到 → 报告同比",
+      "metric": "wholesale_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "11.3"
+    },
+    "cpca:2026-09:wholesale_yoy:ytd": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "cpca:2026-09:wholesale_yoy:ytd",
+      "kind": "observation",
+      "locator": "全国乘用车市场回顾 → 新能源 → 批发销量达到（1–9月累计） → 报告同比",
+      "metric": "wholesale_yoy",
+      "period": [
+        "2026-01",
+        "2026-09"
+      ],
+      "scope": "wholesale",
+      "source_id": "cpca:2026-09",
+      "unit": "%",
+      "value": "9.4"
+    },
+    "nbs:2025-07:coverage_note": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-07:coverage_note",
+      "kind": "methodology",
+      "locator": "附注 → 2.统计范围 → 同期数说明",
+      "metric": "coverage_note",
+      "period": [
+        "2025-07",
+        "2025-07"
+      ],
+      "source_id": "nbs:2025-07",
+      "value": "由于规模以上工业企业范围每年发生变化，为保证本年数据与上年可比，计算产品产量等各项指标同比增长速度所采用的同期数与本期的企业统计范围尽可能相一致，和上年公布的数据存在口径差异。主要原因是：（一）统计单位范围发生变化。每年有部分企业达到规模纳入调查范围，也有部分企业因规模变小退出调查范围，还有新建投产企业、破产、注（吊）销企业等影响；（二）部分企业集团（公司）产品产量数据存在跨地区重复统计现象，根据专项调查对企业集团（公司）跨地区重复产量进行了剔重。"
+    },
+    "nbs:2025-07:output": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-07:output",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月绝对量",
+      "metric": "output",
+      "period": [
+        "2025-07",
+        "2025-07"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2025-07",
+      "unit": "万辆",
+      "value": "117.6"
+    },
+    "nbs:2025-07:output_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-07:output_yoy",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月同比",
+      "metric": "output_yoy",
+      "period": [
+        "2025-07",
+        "2025-07"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2025-07",
+      "unit": "%",
+      "value": "17.1"
+    },
+    "nbs:2025-08:coverage_note": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-08:coverage_note",
+      "kind": "methodology",
+      "locator": "附注 → 2.统计范围 → 同期数说明",
+      "metric": "coverage_note",
+      "period": [
+        "2025-08",
+        "2025-08"
+      ],
+      "source_id": "nbs:2025-08",
+      "value": "由于规模以上工业企业范围每年发生变化，为保证本年数据与上年可比，计算产品产量等各项指标同比增长速度所采用的同期数与本期的企业统计范围尽可能相一致，和上年公布的数据存在口径差异。主要原因是：（一）统计单位范围发生变化。每年有部分企业达到规模纳入调查范围，也有部分企业因规模变小退出调查范围，还有新建投产企业、破产、注（吊）销企业等影响；（二）部分企业集团（公司）产品产量数据存在跨地区重复统计现象，根据专项调查对企业集团（公司）跨地区重复产量进行了剔重。"
+    },
+    "nbs:2025-08:output": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-08:output",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月绝对量",
+      "metric": "output",
+      "period": [
+        "2025-08",
+        "2025-08"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2025-08",
+      "unit": "万辆",
+      "value": "133.3"
+    },
+    "nbs:2025-08:output_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-08:output_yoy",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月同比",
+      "metric": "output_yoy",
+      "period": [
+        "2025-08",
+        "2025-08"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2025-08",
+      "unit": "%",
+      "value": "22.7"
+    },
+    "nbs:2025-09:coverage_note": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-09:coverage_note",
+      "kind": "methodology",
+      "locator": "附注 → 2.统计范围 → 同期数说明",
+      "metric": "coverage_note",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "source_id": "nbs:2025-09",
+      "value": "由于规模以上工业企业范围每年发生变化，为保证本年数据与上年可比，计算产品产量等各项指标同比增长速度所采用的同期数与本期的企业统计范围尽可能相一致，和上年公布的数据存在口径差异。主要原因是：（一）统计单位范围发生变化。每年有部分企业达到规模纳入调查范围，也有部分企业因规模变小退出调查范围，还有新建投产企业、破产、注（吊）销企业等影响；（二）部分企业集团（公司）产品产量数据存在跨地区重复统计现象，根据专项调查对企业集团（公司）跨地区重复产量进行了剔重。"
+    },
+    "nbs:2025-09:output": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-09:output",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月绝对量",
+      "metric": "output",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2025-09",
+      "unit": "万辆",
+      "value": "158.0"
+    },
+    "nbs:2025-09:output_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2025-09:output_yoy",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月同比",
+      "metric": "output_yoy",
+      "period": [
+        "2025-09",
+        "2025-09"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2025-09",
+      "unit": "%",
+      "value": "20.3"
+    },
+    "nbs:2026-07:coverage_note": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-07:coverage_note",
+      "kind": "methodology",
+      "locator": "附注 → 2.统计范围 → 同期数说明",
+      "metric": "coverage_note",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "source_id": "nbs:2026-07",
+      "value": "由于规模以上工业企业范围每年发生变化，为保证本年数据与上年可比，计算产品产量等各项指标同比增长速度所采用的同期数与本期的企业统计范围尽可能相一致，和上年公布的数据存在口径差异。主要原因是：（一）统计单位范围发生变化。每年有部分企业达到规模纳入调查范围，也有部分企业因规模变小退出调查范围，还有新建投产企业、破产、注（吊）销企业等影响；（二）部分企业集团（公司）产品产量数据存在跨地区重复统计现象，根据专项调查对企业集团（公司）跨地区重复产量进行了剔重。"
+    },
+    "nbs:2026-07:output": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-07:output",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月绝对量",
+      "metric": "output",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2026-07",
+      "unit": "万辆",
+      "value": "155.0"
+    },
+    "nbs:2026-07:output_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-07:output_yoy",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月同比",
+      "metric": "output_yoy",
+      "period": [
+        "2026-07",
+        "2026-07"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2026-07",
+      "unit": "%",
+      "value": "29.9"
+    },
+    "nbs:2026-08:coverage_note": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-08:coverage_note",
+      "kind": "methodology",
+      "locator": "附注 → 2.统计范围 → 同期数说明",
+      "metric": "coverage_note",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "source_id": "nbs:2026-08",
+      "value": "由于规模以上工业企业范围每年发生变化，为保证本年数据与上年可比，计算产品产量等各项指标同比增长速度所采用的同期数与本期的企业统计范围尽可能相一致，和上年公布的数据存在口径差异。主要原因是：（一）统计单位范围发生变化。每年有部分企业达到规模纳入调查范围，也有部分企业因规模变小退出调查范围，还有新建投产企业、破产、注（吊）销企业等影响；（二）部分企业集团（公司）产品产量数据存在跨地区重复统计现象，根据专项调查对企业集团（公司）跨地区重复产量进行了剔重。"
+    },
+    "nbs:2026-08:output": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-08:output",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月绝对量",
+      "metric": "output",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2026-08",
+      "unit": "万辆",
+      "value": "164.7"
+    },
+    "nbs:2026-08:output_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-08:output_yoy",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月同比",
+      "metric": "output_yoy",
+      "period": [
+        "2026-08",
+        "2026-08"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2026-08",
+      "unit": "%",
+      "value": "21.9"
+    },
+    "nbs:2026-09:coverage_note": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-09:coverage_note",
+      "kind": "methodology",
+      "locator": "附注 → 2.统计范围 → 同期数说明",
+      "metric": "coverage_note",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "source_id": "nbs:2026-09",
+      "value": "由于规模以上工业企业范围每年发生变化，为保证本年数据与上年可比，计算产品产量等各项指标同比增长速度所采用的同期数与本期的企业统计范围尽可能相一致，和上年公布的数据存在口径差异。主要原因是：（一）统计单位范围发生变化。每年有部分企业达到规模纳入调查范围，也有部分企业因规模变小退出调查范围，还有新建投产企业、破产、注（吊）销企业等影响；（二）部分企业集团（公司）产品产量数据存在跨地区重复统计现象，根据专项调查对企业集团（公司）跨地区重复产量进行了剔重。"
+    },
+    "nbs:2026-09:output": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-09:output",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月绝对量",
+      "metric": "output",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2026-09",
+      "unit": "万辆",
+      "value": "187.0"
+    },
+    "nbs:2026-09:output_yoy": {
+      "geography": "中国（出口为中国厂商面向海外）",
+      "id": "nbs:2026-09:output_yoy",
+      "kind": "observation",
+      "locator": "主要数据表 → 其中：新能源汽车（万辆） → 当月同比",
+      "metric": "output_yoy",
+      "period": [
+        "2026-09",
+        "2026-09"
+      ],
+      "scope": "industrial",
+      "source_id": "nbs:2026-09",
+      "unit": "%",
+      "value": "16.9"
+    }
+  },
+  "question": "2025–2026 年中国新能源汽车市场：总量增长掩盖了哪些需求、产品结构、渠道与供应链的分化？",
+  "reader": "新能源汽车企业战略、销售与运营团队",
+  "task": "A"
+}

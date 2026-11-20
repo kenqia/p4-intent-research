@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "candidate.md": "cfbf3535b4c06f55d53f3359ecdff832e8d4dcc180ada1a26cf22b631865d020",
+    "report.docx": "1c9722a7123548f2cba677e6e126780d024db6b38b57d0f60a00cdf0750755b5",
+    "report.pdf": "3b198b8028a9ace3c096648e0193a23d98713d70966a97dc5d1281f765ce79c3"
+  },
+  "environment": "frozen-stage02-market",
+  "input_sha256": "fbcb783cb7e0f3133496de7ec253792659b7ed65bff6c1c6dc5c701deb00a8fa",
+  "limitations": "Reader task and actionability PARTIAL; this is a comparison reference, not a release.",
+  "review": "Stage 02: final live evidence fact_support PASS and reasoning PASS",
+  "state": "VERIFIED_REFERENCE"
+}

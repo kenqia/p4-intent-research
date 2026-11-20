@@ -1,0 +1,81 @@
+name: Trusted P4 report review
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions: {}
+concurrency:
+  group: p4-content-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  review:
+    name: Trusted evaluator (base policy)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pull-requests: read
+      statuses: write
+    env:
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+      FROM_FORK: ${{ github.event.pull_request.head.repo.fork && github.event.pull_request.head.repo.full_name != github.repository }}
+    steps:
+      - name: Mark exact PR head pending
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$HEAD_SHA" -f state=pending \
+            -f context=p4/content -f description='Trusted base policy evaluating the PR' \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+      - name: Fetch Git objects as data, then remove credentials
+        run: |
+          [[ "$PR_NUMBER" =~ ^[0-9]+$ && "$HEAD_SHA" =~ ^[a-f0-9]{40}$ ]]
+          git fetch --no-tags origin "refs/pull/$PR_NUMBER/head"
+          test "$(git rev-parse FETCH_HEAD)" = "$HEAD_SHA"
+          git config --local --unset-all "http.$GITHUB_SERVER_URL/.extraheader" || true
+      - name: Install verifier dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils python3-venv
+          python3 -m venv "$RUNNER_TEMP/p4-venv"
+          "$RUNNER_TEMP/p4-venv/bin/python" -m pip install 'pytest==8.4.2'
+      - name: Evaluate exact report bytes with trusted checks and judges
+        id: evaluate
+        env:
+          P4_JUDGE_API_KEY: ${{ secrets.P4_JUDGE_API_KEY }}
+          P4_JUDGE_MODEL: ${{ vars.P4_JUDGE_MODEL }}
+        run: |
+          "$RUNNER_TEMP/p4-venv/bin/python" -B gate/pr_gate.py --base "$BASE_SHA" --head "$HEAD_SHA" --author "$PR_AUTHOR" \
+            --fork "$FROM_FORK" --out "$RUNNER_TEMP/p4-result"
+      - name: Preserve actionable feedback
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: p4-report-review
+          path: |
+            ${{ runner.temp }}/p4-result/*.json
+            ${{ runner.temp }}/p4-result/*.md
+            ${{ runner.temp }}/p4-result/*.txt
+          if-no-files-found: ignore
+      - name: Publish required status on exact PR head
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GATE_RESULT: ${{ steps.evaluate.outcome }}
+        run: |
+          state=failure
+          if [[ "$GATE_RESULT" == success ]] &&
+             [[ "$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" --jq .head.sha)" == "$HEAD_SHA" ]]; then
+            state=success
+          fi
+          gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$HEAD_SHA" -f state="$state" \
+            -f context=p4/content -f description="Trusted P4 evaluation: $state" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          test "$state" = success

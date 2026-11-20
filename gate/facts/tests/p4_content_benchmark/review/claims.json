@@ -1,0 +1,58 @@
+{
+  "inventory": {
+    "stage05_body": {
+      "surface": "正文",
+      "relation": "inventory_flow",
+      "inputs": ["non_export_wholesale", "retail"]
+    },
+    "stage05_recommendation": {
+      "surface": "最终建议",
+      "relation": "inventory_flow",
+      "inputs": ["non_export_wholesale", "retail"]
+    },
+    "upstream_heading": {
+      "surface": "标题",
+      "relation": "wholesale_partition",
+      "inputs": ["wholesale", "retail"]
+    },
+    "upstream_body": {
+      "surface": "正文",
+      "relation": "inventory_flow",
+      "inputs": ["non_export_wholesale", "retail"]
+    },
+    "synthetic_parallel_observation": {
+      "surface": "正文",
+      "relation": "parallel_observation",
+      "inputs": ["non_export_wholesale", "retail"]
+    }
+  },
+  "withdrawal": {
+    "september": {
+      "window": "month",
+      "basis": ["cpca:2025-09:export", "cpca:2026-09:export"],
+      "claimed_absent": []
+    },
+    "synthetic_reuse": {
+      "window": "ytd",
+      "basis": ["cpca:2025-09:export:ytd", "cpca:2026-09:export:ytd", "cpca:2026-09:export_yoy:ytd"],
+      "claimed_absent": []
+    },
+    "writeback_heading": {
+      "window": "ytd",
+      "basis": ["cpca:2025-09:export", "cpca:2026-09:export"],
+      "claimed_absent": []
+    },
+    "continued_draft_availability": {
+      "window": "month",
+      "basis": ["cpca:2026-09:export"],
+      "claimed_absent": ["cpca:2025-09:export", "cpca:2026-07:export", "cpca:2026-08:export"]
+    }
+  },
+  "production": {
+    "direct_quarter": {"evidence_id": "NEV-2026-09-M", "window": "quarter"},
+    "direct_first_half": {"evidence_id": "NEV-2026-07-C", "window": "first_half"},
+    "september": {"evidence_id": "NEV-2026-09-M", "window": "month"},
+    "implicit_basis_inputs": ["NEV-2026-08-M", "NEV-2026-09-M"],
+    "two_stage_cross_check_inputs": ["NEV-2026-08-C", "NEV-2026-09-C"]
+  }
+}
