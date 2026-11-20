@@ -1,6 +1,1 @@
-{
-  "maintainers": [
-    "kenqia"
-  ],
-  "require_fork": true
-}
+{"maintainers": ["kenqia"], "require_fork": false}
