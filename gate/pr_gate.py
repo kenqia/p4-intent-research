@@ -162,7 +162,7 @@ def assess(base, head, author, fork, output):
     lane = classify(changed, author, config["maintainers"])
     write(output, "scope.json", {"base":base, "head":head, "paths":changed, "lane":lane})
     if lane == "owner-maintenance":
-        feedback(output, "仅规则维护。该检查通过不晋级产品，仍需 CODEOWNERS 审核。")
+        feedback(output, "仅规则维护。该检查通过不晋级产品，合并仍需满足 GitHub 分支审批规则。")
         return True
     bench = Benchmark()
     facts = subprocess.run([sys.executable,"-B","-m","pytest","-q","-p","no:cacheprovider",str(BENCH)],

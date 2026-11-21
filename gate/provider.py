@@ -70,7 +70,9 @@ class Reviewer:
         self.key = os.environ.get("P4_JUDGE_API_KEY")
         self.model = os.environ.get("P4_JUDGE_MODEL")
         self.effort = os.environ.get("P4_JUDGE_REASONING_EFFORT")
-        self.base_url = (os.environ.get("P4_JUDGE_BASE_URL") or "https://api.openai.com/v1").rstrip("/")
+        self.base_url = os.environ.get("P4_JUDGE_BASE_URL", "").rstrip("/")
+        if not self.base_url:
+            raise RuntimeError("须配置 P4_JUDGE_BASE_URL，门禁禁止通过。")
         if self.base_url not in TRUSTED_BASE_URLS:
             raise RuntimeError("未批准的 Judge API 地址。")
         self.opener = urllib.request.build_opener(_RejectRedirects())
