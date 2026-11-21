@@ -103,7 +103,6 @@ class Reviewer:
             payload["stream"] = True
             # The approved relay can stream Codex-style Responses. JSON is checked by the client.
             payload.pop("text")
-            payload.pop("max_output_tokens")
         request = urllib.request.Request(self.base_url + "/responses", data=json.dumps(payload).encode(),
                                          headers={"Authorization":"Bearer "+self.key, "Content-Type":"application/json"})
         try:
