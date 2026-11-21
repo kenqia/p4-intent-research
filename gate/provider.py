@@ -6,7 +6,7 @@ import urllib.error
 import urllib.request
 
 from cases import RULES
-from judges import ROLES, ROW_FORMAT
+from judges import ROLES, finding_format
 
 
 TRUSTED_BASE_URLS = {"https://api.openai.com/v1", "https://www.shenlanqaq.com/v1"}
@@ -128,11 +128,23 @@ class Reviewer:
         return json.loads("".join(item["text"] for item in messages))
 
     def role(self, role, packets, images=()):
+        # Choose the locator from the supplied material, before asking the reviewer.
+        page_only = all(packet["pdf_pages"] for packet in packets)
+        line_only = all(not packet["pdf_pages"] for packet in packets)
+        locator = "line" if line_only else "page"
+        locator_rules = {
+            (False, True): "Use only the existing Markdown line numbers from report_lines. Never output a page key.",
+            (True, False): "Use only the existing physical page numbers from pdf_pages. Never output a line key.",
+            (False, False): "Use a physical page if supplied for that case. Otherwise use a Markdown line.",
+        }
+        row = ('{"criterion":"criterion","verdict":"PASS|PARTIAL|FAIL|UNSURE","confidence":0.8,'
+               '"findings":[' + finding_format(locator) + ']}')
+        viewed = ',"viewed_pages":{"id":[1]}' if role == "visual" else ""
         return self.ask(
-            ROLES[role] + f" For each case return one row per {RULES[role]}. Use five short, literal, grounded findings at most per row. "
-            "For short Markdown-only cases use at most two findings per criterion. Keep each reason and improvement "
-            "to one short sentence, while locating distinct material errors separately. "
-            "Use exactly one physical page or Markdown line per finding, with registered evidence IDs only. "
-            f"Schema {{\"cases\":{{\"id\":[{ROW_FORMAT}]}}}}. For visual also return viewed_pages for each case.",
+            ROLES[role] + f" For each case return one row per {RULES[role]}. Use five short findings at most per row. "
+            "For short Markdown-only cases use at most two per criterion and locate distinct errors separately. "
+            "Copy a literal contiguous quote from the selected page or line. Use registered evidence IDs only. "
+            + locator_rules[(page_only, line_only)]
+            + f' Schema {{"cases":{{"id":[{row}]}}{viewed}}}.',
             packets, images,
         )

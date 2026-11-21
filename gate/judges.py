@@ -11,11 +11,12 @@ ROLES = {
     "reader": "Check how it answers the task, analysis depth, alternatives, action conditions, natural prose, concision, and utility to this reader.",
     "visual": "Look at EVERY attached actual PDF page; assess figure and table alignment, rationale, axis/units, information density and readability.",
 }
-ROW_FORMAT = (
-    '{"criterion":"criterion","verdict":"PASS|PARTIAL|FAIL|UNSURE","confidence":0.8,'
-    '"findings":[{"severity":"CRITICAL|MAJOR|MINOR|STRENGTH","page":1,"quote":"literal excerpt",'
-    '"evidence_ids":[],"reason":"why","improvement":"action"}]}'
-)
+def finding_format(locator):
+    return (
+        '{"severity":"CRITICAL|MAJOR|MINOR|STRENGTH",'
+        f'"{locator}":1,"quote":"literal excerpt",'
+        '"evidence_ids":[],"reason":"why","improvement":"action"}'
+    )
 
 
 def validate_findings(packet, findings):

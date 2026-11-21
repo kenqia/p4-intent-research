@@ -9,7 +9,7 @@ import sys
 
 from cases import HERE, BENCH, Benchmark, digest, read_json, read_packet, RULES, AB_CRITERIA
 from hard import ARTIFACTS, anchored, verify_package
-from judges import validate_case, validate_ab, ROW_FORMAT
+from judges import finding_format, validate_case, validate_ab
 from provider import Reviewer
 
 ROOT = HERE.parent
@@ -121,12 +121,22 @@ def pair(provider, best, candidate, output):
                                   for page in report["pdf_pages"]]
             anonymized[label] = p
             write(folder, label + ".json", p)
+        finding = finding_format("page")
+        schema = ('{"preference":"A|B|TIE|UNSURE","findings":[{"criterion":"criterion",'
+                  '"better":"A|B|TIE|UNSURE","A":' + finding + ',"B":' + finding + '}]}')
         response = provider.ask(
-            f"Compare these two anonymous Chinese reports in order A/B for {AB_CRITERIA}. "
-            "Use exact page/line quotes and concrete grounds for BOTH reports. "
-            "Return object with preference A|B|TIE|UNSURE and findings rows with criterion, better, and A and B findings. "
-            f"Finding format is the entry inside this criterion row: {ROW_FORMAT}", anonymized)
-        answers.append(validate_ab(response, folder))
+            f"Compare these anonymous Chinese reports for {AB_CRITERIA}. Use one row for every criterion. "
+            "Cite a literal quote from a physical PDF page in BOTH reports for every criterion. "
+            "Even for a tie, fill both objects with distinct labels and grounded observations. "
+            "The values of A and B are the finding objects themselves. "
+            f"Use this exact JSON structure: {schema}", anonymized)
+        try:
+            answers.append(validate_ab(response, folder))
+        except (ValueError, TypeError, KeyError) as exc:
+            write(output, "comparison-error.json", {
+                "order": idx, "valid_orders": answers, "reason": str(exc),
+            })
+            raise
     return answers
 
 
