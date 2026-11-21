@@ -1,0 +1,66 @@
+{
+  "author_kind": "offline-edit",
+  "environment": "frozen-stage02-market",
+  "input_sha256": "fbcb783cb7e0f3133496de7ec253792659b7ed65bff6c1c6dc5c701deb00a8fa",
+  "artifacts": {
+    "candidate.md": "1ba26079c6e7bcba2112a2d55f13322604a18836e52199b9f6f944e3db662a36",
+    "report.pdf": "65cbf989878ab25ea947b14387033bd876c399400421a5e7fb417786e2d4c57a",
+    "report.docx": "6b238d690fd76800668e8f38d77bebc3117032cfcc0482964f782331c82edd7d"
+  },
+  "claims": [
+    {
+      "line": 3,
+      "quote": "2026年1—9月厂商批发较上年同期增加100.4万辆，其中出口增加226.0万辆，非出口批发减少125.6万辆。",
+      "relation": "wholesale_partition",
+      "operands": [
+        "export",
+        "wholesale"
+      ],
+      "window": "ytd",
+      "basis": [
+        "cpca:2025-09:export:ytd",
+        "cpca:2025-09:wholesale:ytd",
+        "cpca:2026-09:export:ytd",
+        "cpca:2026-09:wholesale:ytd"
+      ],
+      "values": [
+        "100.4",
+        "226.0",
+        "-125.6"
+      ]
+    },
+    {
+      "line": 5,
+      "quote": "2026年9月厂商批发较上年同期增加16.6万辆，其中出口增加34.7万辆，非出口批发减少18.1万辆。",
+      "relation": "wholesale_partition",
+      "operands": [
+        "export",
+        "wholesale"
+      ],
+      "window": "month",
+      "basis": [
+        "cpca:2025-09:export",
+        "cpca:2025-09:wholesale",
+        "cpca:2026-09:export",
+        "cpca:2026-09:wholesale"
+      ],
+      "values": [
+        "16.6",
+        "34.7",
+        "-18.1"
+      ]
+    }
+  ],
+  "charts": [
+    {
+      "page": 1,
+      "caption": "2026年1—9月厂商批发同期变化",
+      "evidence_ids": [
+        "cpca:2025-09:export:ytd",
+        "cpca:2026-09:export:ytd",
+        "cpca:2025-09:wholesale:ytd",
+        "cpca:2026-09:wholesale:ytd"
+      ]
+    }
+  ]
+}
