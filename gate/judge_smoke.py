@@ -45,23 +45,27 @@ def run(out):
             response = provider.role(role, [report], images)
             reviews[role] = validate_group(response, [report], role)["reference"]
         write(out, "judge-review.json", reviews)
-        ab = pair(provider, report, report, out)
+        try:
+            ab = pair(provider, report, report, out)
+        except (ValueError, TypeError, KeyError):
+            ab = []
         write(out, "comparison.json", ab)
         gate_ok, reason = quality_gate(reviews, ab, calibrated, hard)
         complete = len(provider.receipts) == 9 and all(
             receipt["model"] == "gpt-6.2-sol" and receipt["reported_effort"] == "medium"
             for receipt in provider.receipts)
+        comparison_valid = len(ab) == 2
         write(out, "decision.json", {
             "execution": "OK" if complete else "UNVERIFIED_MODEL",
             "mode": "MAINTAINER_REFERENCE_REPLAY",
             "artifact_identity": "A and B contain the identical frozen reference",
-            "calibration_passed": calibrated, "promotion": "HOLD",
+            "calibration_passed": calibrated, "comparison_valid": comparison_valid, "promotion": "HOLD",
             "promotion_reason": "同一参考稿与自身比较是无增益对照。",
             "gate_rule_result": bool(gate_ok and complete), "gate_detail": reason,
             "phase_one_required_status_written": False,
         })
-        feedback(out, "GPT‑6.2 Sol 托管参考稿复跑。A/B 是同一稿，晋级保留 HOLD。", reviews)
-        return 0 if complete else 4
+        feedback(out, f"GPT‑6.2 Sol 托管参考稿复跑。{reason} 同稿对照保留 HOLD。", reviews)
+        return 0 if complete and calibrated and comparison_valid else 4
     finally:
         write(out, "model-executions.json", provider.receipts)
 
