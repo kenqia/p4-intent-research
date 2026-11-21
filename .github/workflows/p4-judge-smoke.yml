@@ -1,0 +1,40 @@
+name: P4 hosted Judge rehearsal
+on:
+  push:
+    branches: [codex/judge-smoke]
+permissions:
+  contents: read
+jobs:
+  judge:
+    name: Evaluate the frozen reference
+    if: github.repository == 'kenqia/p4-intent-research' && github.actor == 'kenqia'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 27
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install verifier dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils python3-venv
+          python3 -m venv "$RUNNER_TEMP/p4-venv"
+          "$RUNNER_TEMP/p4-venv/bin/python" -m pip install 'pytest==8.4.2'
+      - name: Run the frozen deterministic suite
+        run: "$RUNNER_TEMP/p4-venv/bin/python -B -m pytest -q -p no:cacheprovider gate/facts/tests/p4_content_benchmark"
+      - name: Run bounded hosted Judge rehearsal
+        env:
+          P4_JUDGE_API_KEY: ${{ secrets.P4_JUDGE_API_KEY }}
+          P4_JUDGE_MODEL: gpt-6.2-sol
+          P4_JUDGE_REASONING_EFFORT: medium
+        run: |
+          "$RUNNER_TEMP/p4-venv/bin/python" -B gate/judge_smoke.py --out "$RUNNER_TEMP/p4-judge-smoke"
+      - name: Preserve public reference review results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: p4-judge-smoke
+          path: |
+            ${{ runner.temp }}/p4-judge-smoke/*.json
+            ${{ runner.temp }}/p4-judge-smoke/feedback.md
+          if-no-files-found: error

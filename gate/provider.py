@@ -13,6 +13,7 @@ class Reviewer:
     def __init__(self):
         self.key = os.environ.get("P4_JUDGE_API_KEY")
         self.model = os.environ.get("P4_JUDGE_MODEL")
+        self.effort = os.environ.get("P4_JUDGE_REASONING_EFFORT")
         if not self.key or not self.model:
             raise RuntimeError("Judge 未配置，门禁禁止通过。")
         self.calls = 0
@@ -39,6 +40,8 @@ class Reviewer:
             "input":[{"role":"user", "content":parts}], "text":{"format":{"type":"json_object"}},
             "max_output_tokens":9500,
         }
+        if self.effort:
+            payload["reasoning"] = {"effort": self.effort}
         request = urllib.request.Request("https://api.openai.com/v1/responses", data=json.dumps(payload).encode(),
                                          headers={"Authorization":"Bearer "+self.key, "Content-Type":"application/json"})
         try:
@@ -53,7 +56,10 @@ class Reviewer:
         messages = [item for entry in result["output"] if entry["type"] == "message" for item in entry["content"]]
         if not messages or any(item["type"] != "output_text" for item in messages):
             raise RuntimeError("评审拒绝或输出缺失")
-        self.receipts.append({"id":result["id"], "model":result.get("model"), "usage":result.get("usage")})
+        self.receipts.append({
+            "id": result["id"], "model": result.get("model"), "usage": result.get("usage"),
+            "requested_effort": self.effort, "reported_effort": (result.get("reasoning") or {}).get("effort"),
+        })
         return json.loads("".join(item["text"] for item in messages))
 
     def role(self, role, packets, images=()):
