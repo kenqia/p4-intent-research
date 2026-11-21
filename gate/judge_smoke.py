@@ -33,8 +33,9 @@ def run(out):
 
     try:
         alive = provider.ask("Return JSON with the boolean key alive set to true.",
-                             {"purpose": "minimal hosted Judge preflight"})
+                             {"purpose": "minimal hosted Judge preflight"}, max_output_tokens=1024)
         require(alive.get("alive") is True, "模型预检未返回预期结果")
+        require(provider.receipts[-1]["model"] == "gpt-6.2-sol", "服务未返回请求的模型")
         fixtures = read_json(HERE / "calibration/cases.json")
         calibrated = calibration(provider, fixtures, out)
         visual_files = [reference / page["image"] for page in report["pdf_pages"]]
