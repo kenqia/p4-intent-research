@@ -43,16 +43,20 @@ def _error_kind(error):
 def _read_response(response):
     if response.headers.get_content_type() != "text/event-stream":
         return json.loads(response.read(1_500_000))
-    remaining = 1_500_000
-    for line in response:
+    # SSE wraps tokens in many events. Keep a separate wire cap and reject oversized lines.
+    remaining = 16_000_000
+    while line := response.readline(1_500_001):
         remaining -= len(line)
-        if remaining < 0:
+        if remaining < 0 or len(line) > 1_500_000:
             raise RuntimeError("评审流式返回超过上限")
         if not line.startswith(b"data: "):
             continue
         data = line[6:].strip()
         if data == b"[DONE]":
             break
+        if not any(marker in data for marker in (b'"response.completed"', b'"response.failed"',
+                                                   b'"response.incomplete"', b'"error"')):
+            continue
         event = json.loads(data)
         if event.get("type") in {"response.completed", "response.failed", "response.incomplete"}:
             return event.get("response") or {"status": "failed"}
@@ -126,6 +130,8 @@ class Reviewer:
     def role(self, role, packets, images=()):
         return self.ask(
             ROLES[role] + f" For each case return one row per {RULES[role]}. Use five short, literal, grounded findings at most per row. "
+            "For short Markdown-only cases use at most two findings per criterion. Keep each reason and improvement "
+            "to one short sentence, while locating distinct material errors separately. "
             "Use exactly one physical page or Markdown line per finding, with registered evidence IDs only. "
             f"Schema {{\"cases\":{{\"id\":[{ROW_FORMAT}]}}}}. For visual also return viewed_pages for each case.",
             packets, images,
