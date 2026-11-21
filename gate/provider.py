@@ -9,11 +9,23 @@ from cases import RULES
 from judges import ROLES, ROW_FORMAT
 
 
+TRUSTED_BASE_URLS = {"https://api.openai.com/v1", "https://www.shenlanqaq.com/v1"}
+
+
+class _RejectRedirects(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        return None
+
+
 class Reviewer:
     def __init__(self):
         self.key = os.environ.get("P4_JUDGE_API_KEY")
         self.model = os.environ.get("P4_JUDGE_MODEL")
         self.effort = os.environ.get("P4_JUDGE_REASONING_EFFORT")
+        self.base_url = os.environ.get("P4_JUDGE_BASE_URL", "https://api.openai.com/v1").rstrip("/")
+        if self.base_url not in TRUSTED_BASE_URLS:
+            raise RuntimeError("未批准的 Judge API 地址。")
+        self.opener = urllib.request.build_opener(_RejectRedirects())
         if not self.key or not self.model:
             raise RuntimeError("Judge 未配置，门禁禁止通过。")
         self.calls = 0
@@ -42,10 +54,10 @@ class Reviewer:
         }
         if self.effort:
             payload["reasoning"] = {"effort": self.effort}
-        request = urllib.request.Request("https://api.openai.com/v1/responses", data=json.dumps(payload).encode(),
+        request = urllib.request.Request(self.base_url + "/responses", data=json.dumps(payload).encode(),
                                          headers={"Authorization":"Bearer "+self.key, "Content-Type":"application/json"})
         try:
-            with urllib.request.urlopen(request, timeout=160) as response:
+            with self.opener.open(request, timeout=160) as response:
                 result = json.loads(response.read(1_500_000))
         except urllib.error.HTTPError as exc:
             raise RuntimeError(f"评审服务 HTTP {exc.code}") from None

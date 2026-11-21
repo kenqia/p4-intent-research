@@ -32,6 +32,9 @@ def run(out):
     require(all(c["status"] == "PASS" for c in hard), f"冻结参考硬检查失败：{hard}")
 
     try:
+        alive = provider.ask("Return JSON with the boolean key alive set to true.",
+                             {"purpose": "minimal hosted Judge preflight"})
+        require(alive.get("alive") is True, "模型预检未返回预期结果")
         fixtures = read_json(HERE / "calibration/cases.json")
         calibrated = calibration(provider, fixtures, out)
         visual_files = [reference / page["image"] for page in report["pdf_pages"]]
@@ -44,7 +47,7 @@ def run(out):
         ab = pair(provider, report, report, out)
         write(out, "comparison.json", ab)
         gate_ok, reason = quality_gate(reviews, ab, calibrated, hard)
-        complete = len(provider.receipts) == 8 and all(
+        complete = len(provider.receipts) == 9 and all(
             receipt["model"] == "gpt-6.2-sol" and receipt["reported_effort"] == "medium"
             for receipt in provider.receipts)
         write(out, "decision.json", {
@@ -57,9 +60,6 @@ def run(out):
             "phase_one_required_status_written": False,
         })
         feedback(out, "GPT‑6.2 Sol 托管参考稿复跑。A/B 是同一稿，晋级保留 HOLD。", reviews)
-        # Measure the API's unconfigured effort so main does not silently run at a different setting.
-        provider.effort = None
-        provider.ask("Return JSON with the boolean key alive set to true.", {"purpose": "default effort probe"})
         return 0 if complete else 4
     finally:
         write(out, "model-executions.json", provider.receipts)

@@ -25,6 +25,7 @@ jobs:
       - name: Run bounded hosted Judge rehearsal
         env:
           P4_JUDGE_API_KEY: ${{ secrets.P4_JUDGE_API_KEY }}
+          P4_JUDGE_BASE_URL: https://www.shenlanqaq.com/v1
           P4_JUDGE_MODEL: gpt-6.2-sol
           P4_JUDGE_REASONING_EFFORT: medium
         run: |
