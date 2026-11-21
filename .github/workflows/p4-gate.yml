@@ -53,7 +53,9 @@ jobs:
         run: |
           approved=false
           if [[ "$FROM_FORK" == true ]] &&
-             jq -e --arg author "$PR_AUTHOR"                'type == "array" and any(.[]; type == "string" and ascii_downcase == ($author | ascii_downcase))'                <<< "${P4_JUDGE_APPROVED_AUTHORS:-[]}" >/dev/null; then
+             jq -e --arg author "$PR_AUTHOR" \
+               'type == "array" and any(.[]; type == "string" and ascii_downcase == ($author | ascii_downcase))' \
+               <<< "${P4_JUDGE_APPROVED_AUTHORS:-[]}" >/dev/null; then
             approved=true
           fi
           printf 'approved=%s\n' "$approved" >> "$GITHUB_OUTPUT"

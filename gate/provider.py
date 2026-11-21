@@ -118,12 +118,15 @@ class Reviewer:
             raise RuntimeError(f"评审服务异常 {type(exc).__name__}") from None
         if result.get("status") != "completed" or not result.get("id"):
             raise RuntimeError("评审未完整执行")
+        reported_effort = (result.get("reasoning") or {}).get("effort")
+        if result.get("model") != self.model or (self.effort and reported_effort != self.effort):
+            raise RuntimeError("评审服务回执中的模型或推理档位与配置不一致")
         messages = [item for entry in result["output"] if entry["type"] == "message" for item in entry["content"]]
         if not messages or any(item["type"] != "output_text" for item in messages):
             raise RuntimeError("评审拒绝或输出缺失")
         self.receipts.append({
             "id": result["id"], "model": result.get("model"), "usage": result.get("usage"),
-            "requested_effort": self.effort, "reported_effort": (result.get("reasoning") or {}).get("effort"),
+            "requested_effort": self.effort, "reported_effort": reported_effort,
         })
         return json.loads("".join(item["text"] for item in messages))
 
