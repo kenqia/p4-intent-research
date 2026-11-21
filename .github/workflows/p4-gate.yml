@@ -46,11 +46,26 @@ jobs:
           sudo apt-get install -y -qq poppler-utils python3-venv
           python3 -m venv "$RUNNER_TEMP/p4-venv"
           "$RUNNER_TEMP/p4-venv/bin/python" -m pip install 'pytest==8.4.2'
+      - name: Limit paid Judge access to approved fork authors
+        id: judge_access
+        env:
+          P4_JUDGE_APPROVED_AUTHORS: ${{ vars.P4_JUDGE_APPROVED_AUTHORS }}
+        run: |
+          approved=false
+          if [[ "$FROM_FORK" == true ]] &&
+             jq -e --arg author "$PR_AUTHOR" \
+               'type == "array" and any(.[]; type == "string" and ascii_downcase == ($author | ascii_downcase))' \
+               <<< "${P4_JUDGE_APPROVED_AUTHORS:-[]}" >/dev/null; then
+            approved=true
+          fi
+          printf 'approved=%s\n' "$approved" >> "$GITHUB_OUTPUT"
       - name: Evaluate exact report bytes with trusted checks and judges
         id: evaluate
         env:
-          P4_JUDGE_API_KEY: ${{ secrets.P4_JUDGE_API_KEY }}
+          P4_JUDGE_API_KEY: ${{ steps.judge_access.outputs.approved == 'true' && secrets.P4_JUDGE_API_KEY || '' }}
           P4_JUDGE_MODEL: ${{ vars.P4_JUDGE_MODEL }}
+          P4_JUDGE_BASE_URL: ${{ vars.P4_JUDGE_BASE_URL }}
+          P4_JUDGE_REASONING_EFFORT: ${{ vars.P4_JUDGE_REASONING_EFFORT }}
         run: |
           "$RUNNER_TEMP/p4-venv/bin/python" -B gate/pr_gate.py --base "$BASE_SHA" --head "$HEAD_SHA" --author "$PR_AUTHOR" \
             --fork "$FROM_FORK" --out "$RUNNER_TEMP/p4-result"
